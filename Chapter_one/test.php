@@ -19,5 +19,24 @@
                 }
             ?>
         </p>
+
+        <table style="border: 0px; padding:3px">
+            <tr>
+                <td style="text-align:right;">50</td>
+                <td style="text-align:right;">5</td>
+            </tr>
+            <tr>
+                <td style="text-align:right;">100</td>
+                <td style="text-align:right;">10</td>
+            </tr>
+            <tr>
+            <td>===========================</td>
+            </tr>
+            <tr>
+                <td style="text-align:right;">150</td>
+                <td style="text-align:right;">15</td>>
+            </tr>
+        
+        </table>
     </body>
 </html>
