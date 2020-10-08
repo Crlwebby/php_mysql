@@ -21,6 +21,24 @@
             echo htmlspecialchars($tireqty).' tires<br/>';
             echo htmlspecialchars($oilqty).' oilqty<br/>';
             echo htmlspecialchars($sparkqty).'sparkqty<br/>';
+            $find=$_POST['find'];
+            if($find=="a"){
+                echo "<p>regular customer</p>";
+            }
+            elseif($find=="b"){
+                echo "<p>customer referred by TV advert.</p>";
+            }
+            elseif($find=="c"){
+                echo "<p>customer referred by phone directory</p>";
+            }
+            elseif($find=="d"){
+                echo "<p>customer referred by word of mouth.</p>";
+            }
+            else{
+                echo "<p>we don't know how this customer found us</p>";
+            }
+
+
 
             $totalqty = 0;
             $totalqty = $tireqty + $oilqty + $sparkqty;
@@ -32,6 +50,12 @@
             $taxrate = 0.10;
             $totalamount = $totalamount * (1 + $taxrate);
             echo "Total including tax:$".number_format($totalamount,2)."</p>";
+
+            echo 'isset($tireqty):'.isset($tireqty).'<br/>';
+            echo 'isset($nothere):'.isset($nothere).'<br/>';
+            echo 'empty($tireqty):'.empty($tireqty).'<br/>';
+            echo 'empty($nothere):'.empty($nothere).'<br/>';
+
 
         ?>
     </body>
