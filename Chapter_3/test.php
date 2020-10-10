@@ -1,5 +1,13 @@
 <?php
     $products = ['Tires','Oil','Spark Plugs'];
+    $pro = ['cby','xx','xjy'];
+    $products = $products + $pro;
+    var_dump($products);        //because pro and products have same elements by key 1,2,3,
+    // so they wouldn't combine;
+    foreach($products as $var){
+        echo $var."\t";
+    }
+    echo "\n";
     $products{1} = 'cby';
     $products[3] = "what?";
     echo $products[1]."\n";
@@ -32,9 +40,11 @@
         }
         return $res;
     }
-    
+
     while($element = func_new_each($prices)){
         echo $element['key']."-".$element['value'];
         echo "\n";
     }
+
+
 ?>
