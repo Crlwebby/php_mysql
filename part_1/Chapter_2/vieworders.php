@@ -10,8 +10,8 @@
         <h1>Bob's Auto Parts</h1>
         <h2>Customer Orders</h2>
         <?php
-            if(file_exists("../orders/orders.txt")){
-                $fp = fopen("../orders/orders.txt",'rb');
+            if(file_exists("../../orders/orders.txt")){
+                $fp = fopen("../../orders/orders.txt",'rb');
             }
             else{
                 echo 'There are currently no orders.';
