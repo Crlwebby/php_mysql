@@ -15,7 +15,7 @@ if (mysqli_connect_errno()) {
 }
 
 try {
- 
+
     $currentTime = time();
     $session_id = session_id();
     
@@ -33,20 +33,20 @@ try {
                      date_created >= ?";
 
            $stmt = $db->prepare($query);
-           $stmt->bind_param('s', $lastPoll);  
+           $stmt->bind_param('s', $lastPoll);
            $stmt->execute();
            $stmt->bind_result($id, $message, $session_id, $date_created);
            $result = $stmt->get_result();
 
            $newChats = [];
            while($chat = $result->fetch_assoc()) {
-               
+
                if($session_id == $chat['sent_by']) {
                   $chat['sent_by'] = 'self';
                } else {
                   $chat['sent_by'] = 'other';
                }
-             
+
                $newChats[] = $chat;
             }
 
@@ -68,6 +68,7 @@ try {
                       VALUES(?, ?, ?)";
 
             $stmt = $db->prepare($query);
+            //ssi represents string string and int, they will replace the ? in $query in order
             $stmt->bind_param('ssi', $message, $session_id, $currentTime); 
             $stmt->execute(); 
 
